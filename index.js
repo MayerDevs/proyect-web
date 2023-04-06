@@ -77,3 +77,49 @@ function info ({age}){
 
 // div.innerHTML = info(student)
 // console.log(info())
+
+
+// metodo de arreglos
+const names = ['juan', 'pedro', 'liz', 'lucas', 'lucas']
+
+// forEach -> recorre el arreglo
+// names.forEach(element => {
+//     console.log(element)
+// });
+
+// map -> recorre el arreglo y lo convierte en una lista
+let newNames = names.map(e =>{
+    // console.log(e)
+    return e
+})
+// console.log(newNames)
+
+// find ->  busca un elemento en el arreglo
+const valueFind = names.find(e =>{
+    if(e=='lucas'){
+        return e
+    }
+})
+// console.log(valueFind)
+
+// filter -> filtrar elementos de un arreglo
+let c = 0
+const count = names.filter(e => {
+    if(e == "lucas"){
+        c += 1
+        return e
+    }
+})
+// console.log(count+" aparece "+c+" veces")
+
+// concatenar arrays
+
+const nFisrt = ['1','2','3']
+const nSecond = ['4','5','6']
+
+let merge = nFisrt.concat(nSecond)
+// console.log(merge)
+
+// spread operatos
+
+console.log({...nFisrt, ...nSecond})
