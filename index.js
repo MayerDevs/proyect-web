@@ -15,7 +15,7 @@ const suma = (x=0,y=3) => {
 }
 // console.log(suma())
 
-
+// -----------------------------------------
 // objectos en js
 const user = {
     name: "jair",
@@ -44,7 +44,7 @@ const Product = {
 }
 // console.log(`el producto es ${name} y el costo es ${price}`)
 
-
+// -----------------------------------------
 // DOM
 const input = document.createElement('input')
 const button = document.createElement('button')
@@ -78,7 +78,7 @@ function info ({age}){
 // div.innerHTML = info(student)
 // console.log(info())
 
-
+// -----------------------------------------
 // metodo de arreglos
 const names = ['juan', 'pedro', 'liz', 'lucas', 'lucas']
 
@@ -122,4 +122,56 @@ let merge = nFisrt.concat(nSecond)
 
 // spread operatos
 
-console.log({...nFisrt, ...nSecond})
+// console.log({...nFisrt, ...nSecond})
+
+// -----------------------------------------
+// Ecmastcript modules
+// enviar funciones de un modulo a otro
+
+// import e from './module.js'
+import {plus, takeAwey} from './module.js'
+
+// console.log(plus(2,2))
+// console.log(takeAwey(20,2))
+// console.log(e)
+
+// -----------------------------------------
+// async - await
+
+const student2 = {
+    name: "carlos",
+    age: 23,
+    // frieds: ['luis', 'paco']
+} 
+
+// console.log(student2.frieds?.[0])
+const ul = document.createElement("ul")
+
+// let data = fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(function(response){
+//         return response.json()
+//     }).then(function(data){
+//         data.forEach(e => {
+//             const li = document.createElement("li")
+//             li.innerText = e.name
+//             ul.append(li)
+//         });
+//         // console.log(data)
+//         document.body.append(ul)
+//     })
+ 
+
+async function datas(){ 
+    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+    const data = await response.json()
+    data.forEach(e => {
+        const li = document.createElement("li")
+        li.innerText = e.name
+        ul.append(li)
+    });
+    // console.log(data)
+    document.body.append(ul)
+
+}
+
+datas()
